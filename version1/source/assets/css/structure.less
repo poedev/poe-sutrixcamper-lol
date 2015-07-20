@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 .clearfix {
   clear: both;
@@ -96,11 +97,258 @@ body {
 .center-container {
   width: 960px;
   margin: auto;
-  min-height: 500px;
-  border-left: 1px solid #0c2830;
-  border-right: 1px solid #0c2830;
 }
 
-#lol-container {
-    
+.lol-container {
+    .center-container {
+      margin: 20px auto;
+      background-color: rgba(22, 22, 22, 0.5);
+    }
+
+    &.tournament {
+      .tournament-title {
+        padding-left: 256px;
+        position: relative;
+        .logo {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          width: 256px;
+          padding: 12px;
+          img {
+            max-width: 100%;
+          }
+        }
+        .title {
+          font-family: 'tradebold';
+          font-size: 1.8rem;
+          color: #fdfdfd;
+          line-height: 50px;
+          padding-top: 64px;
+          .series {
+            color: #cfba6b;
+            height: 60px;
+            line-height: 60px;
+            border-bottom: 1px solid #343434;
+          }
+        }
+      }
+    }
+
+    .tournament-teams {
+      margin-top: 50px;
+      padding: 20px 0;
+      border-top: 1px solid #121212;
+      .title {
+        text-align: center;
+        color: #cfba6b;
+        font-size: 1.3rem;
+        font-family: 'tradebold';
+        padding: 10px 0;
+      }
+
+      .teams {
+        text-align: center;
+        img {
+          max-width: 128px;
+          margin: 12px;
+        }
+      }
+    }
+
+    .tournament-battles {
+      margin-top: 50px;
+      padding: 20px 0;
+      border-top: 1px solid #222222;
+
+      .title {
+        text-align: center;
+        color: #cfba6b;
+        font-size: 1.3rem;
+        font-family: 'tradebold';
+        padding: 10px 0;
+      }
+
+      .battles {
+        .battle {
+          position: relative;
+          padding: 12px 30px;
+          &:hover {
+            background-color: #232323;            
+            cursor: pointer;
+            .vs {
+              opacity: 0;
+            }
+            .video {
+              opacity: 0.8;
+              background-color: #ffffff;
+            }
+          }
+          .vs, .video {
+            -webkit-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+          }
+          .vs {
+            width: 150px;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            margin-left: -75px;
+            color: #fcfcfc;
+            text-align: center;
+            font-family: 'tradebold';
+            padding: 40px 0;
+            .text {
+              font-size: 2.3rem;
+              color: #333333;
+            }
+            .time {
+              padding-top: 12px;
+              font-size: 1.1rem;
+            }
+          }
+          .video {
+            width: 128px;
+            height: 128px;
+            position: absolute;
+            left: 50%;
+            top: 14px;
+            margin-left: -64px;
+            overflow: hidden;
+            border-radius: 64px;
+            background-size: 140% 140%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            &:before {
+              width: 64px;
+              height: 64px;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              margin-top: -32px;
+              margin-left: -28px;
+              content: "";
+              background-image: url(../images/icons/play-btn.png);
+              background-size: 120% 120%;
+              background-position: center center;
+              z-index: 11;  
+            }
+            opacity: 0;
+          }
+
+          .team {
+            position: relative;
+            .logo {
+              img {
+                max-width: 128px;
+              }
+            }
+
+            .team-info {
+              color: #ffffff;
+              font-family: 'tradebold';
+              font-size: 1.4rem;
+              padding: 40px 20px;
+              .team {
+                font-size: 1.2rem;
+                color: #cfba6b;
+              }
+              .win {
+                margin-top: 8px;
+                font-size: 1rem;
+                color: green;
+              }
+            }
+          }
+          .blue {
+            width: 50%;
+            float: left;
+            .logo {
+              float: left;
+            }
+            .team-info {
+              float: left;
+            }
+          }
+          .red {
+            width: 50%;
+            float: right;
+            .logo {
+              float: right;
+            }
+            .team-info {
+              text-align: right;
+              float: right;
+            }
+          }
+        }
+      }
+    }
+}
+
+footer {
+    padding-top: 15px;  
+    background-color: #121212; 
+    .partner, .follow-us {
+      width: 50%;   
+      padding: 20px 0;    
+
+    }
+    ul {
+      &.logo-list { 
+        padding-top: 18px;
+        li {
+          width: 30%;
+          margin-left: 3%;
+          margin-top: 25px; 
+          position: relative;
+          float: left;
+          padding: 12px;
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+    .channel {
+      text-align: center;
+      img {
+        max-width: 64px;
+        margin: 15px 8px;
+      }
+    }
+    .partner {
+      float: left;
+      padding-right: 20px;
+    }
+    .follow-us {
+      float: right;
+      padding-left: 20px;
+    }
+    h1 {    
+      text-align: center;
+      font-family: 'tradebold';
+      font-size: 1.6rem;
+      color: #ffffff;
+      height: 60px;
+      line-height: 60px;
+      border-top: 1px solid #232323;
+      border-bottom: 1px solid grey;
+      .em {
+        color: #cfba6b;
+      }
+    }
+    .rights {
+      width: 50%;
+      float: right;
+      margin-top: 30px;
+      color: #fcfcfc;
+      text-align: center;
+      font-size: 1rem;
+      .em {
+        color: #cfba6b;        
+      }
+    }
 }

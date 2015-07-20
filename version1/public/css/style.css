@@ -13,6 +13,10 @@
   font-family: 'adobe-garamond-regular';
   src: url('../fonts/Adobe-Garamond-Pro Regular.ttf');
 }
+@font-face {
+  font-family: 'tradebold';
+  src: url('../fonts/tradebold.woff');
+}
 html,
 body,
 div,
@@ -1207,6 +1211,7 @@ noscript {
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 .clearfix,
 .grid,
@@ -1298,7 +1303,236 @@ body {
 .center-container {
   width: 960px;
   margin: auto;
-  min-height: 500px;
-  border-left: 1px solid #0c2830;
-  border-right: 1px solid #0c2830;
+}
+.lol-container .center-container {
+  margin: 20px auto;
+  background-color: rgba(22, 22, 22, 0.5);
+}
+.lol-container.tournament .tournament-title {
+  padding-left: 256px;
+  position: relative;
+}
+.lol-container.tournament .tournament-title .logo {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 256px;
+  padding: 12px;
+}
+.lol-container.tournament .tournament-title .logo img {
+  max-width: 100%;
+}
+.lol-container.tournament .tournament-title .title {
+  font-family: 'tradebold';
+  font-size: 1.8rem;
+  color: #fdfdfd;
+  line-height: 50px;
+  padding-top: 64px;
+}
+.lol-container.tournament .tournament-title .title .series {
+  color: #cfba6b;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #343434;
+}
+.lol-container .tournament-teams {
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid #121212;
+}
+.lol-container .tournament-teams .title {
+  text-align: center;
+  color: #cfba6b;
+  font-size: 1.3rem;
+  font-family: 'tradebold';
+  padding: 10px 0;
+}
+.lol-container .tournament-teams .teams {
+  text-align: center;
+}
+.lol-container .tournament-teams .teams img {
+  max-width: 128px;
+  margin: 12px;
+}
+.lol-container .tournament-battles {
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid #222222;
+}
+.lol-container .tournament-battles .title {
+  text-align: center;
+  color: #cfba6b;
+  font-size: 1.3rem;
+  font-family: 'tradebold';
+  padding: 10px 0;
+}
+.lol-container .tournament-battles .battles .battle {
+  position: relative;
+  padding: 12px 30px;
+}
+.lol-container .tournament-battles .battles .battle:hover {
+  background-color: #232323;
+  cursor: pointer;
+}
+.lol-container .tournament-battles .battles .battle:hover .vs {
+  opacity: 0;
+}
+.lol-container .tournament-battles .battles .battle:hover .video {
+  opacity: 0.8;
+  background-color: #ffffff;
+}
+.lol-container .tournament-battles .battles .battle .vs,
+.lol-container .tournament-battles .battles .battle .video {
+  transition: all 0.4s ease;
+}
+.lol-container .tournament-battles .battles .battle .vs {
+  width: 150px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -75px;
+  color: #fcfcfc;
+  text-align: center;
+  font-family: 'tradebold';
+  padding: 40px 0;
+}
+.lol-container .tournament-battles .battles .battle .vs .text {
+  font-size: 2.3rem;
+  color: #333333;
+}
+.lol-container .tournament-battles .battles .battle .vs .time {
+  padding-top: 12px;
+  font-size: 1.1rem;
+}
+.lol-container .tournament-battles .battles .battle .video {
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  left: 50%;
+  top: 14px;
+  margin-left: -64px;
+  overflow: hidden;
+  border-radius: 64px;
+  background-size: 140% 140%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+.lol-container .tournament-battles .battles .battle .video:before {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -32px;
+  margin-left: -28px;
+  content: "";
+  background-image: url(../images/icons/play-btn.png);
+  background-size: 120% 120%;
+  background-position: center center;
+  z-index: 11;
+}
+.lol-container .tournament-battles .battles .battle .team {
+  position: relative;
+}
+.lol-container .tournament-battles .battles .battle .team .logo img {
+  max-width: 128px;
+}
+.lol-container .tournament-battles .battles .battle .team .team-info {
+  color: #ffffff;
+  font-family: 'tradebold';
+  font-size: 1.4rem;
+  padding: 40px 20px;
+}
+.lol-container .tournament-battles .battles .battle .team .team-info .team {
+  font-size: 1.2rem;
+  color: #cfba6b;
+}
+.lol-container .tournament-battles .battles .battle .team .team-info .win {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: green;
+}
+.lol-container .tournament-battles .battles .battle .blue {
+  width: 50%;
+  float: left;
+}
+.lol-container .tournament-battles .battles .battle .blue .logo {
+  float: left;
+}
+.lol-container .tournament-battles .battles .battle .blue .team-info {
+  float: left;
+}
+.lol-container .tournament-battles .battles .battle .red {
+  width: 50%;
+  float: right;
+}
+.lol-container .tournament-battles .battles .battle .red .logo {
+  float: right;
+}
+.lol-container .tournament-battles .battles .battle .red .team-info {
+  text-align: right;
+  float: right;
+}
+footer {
+  padding-top: 15px;
+  background-color: #121212;
+}
+footer .partner,
+footer .follow-us {
+  width: 50%;
+  padding: 20px 0;
+}
+footer ul.logo-list {
+  padding-top: 18px;
+}
+footer ul.logo-list li {
+  width: 30%;
+  margin-left: 3%;
+  margin-top: 25px;
+  position: relative;
+  float: left;
+  padding: 12px;
+}
+footer ul.logo-list li img {
+  max-width: 100%;
+}
+footer .channel {
+  text-align: center;
+}
+footer .channel img {
+  max-width: 64px;
+  margin: 15px 8px;
+}
+footer .partner {
+  float: left;
+  padding-right: 20px;
+}
+footer .follow-us {
+  float: right;
+  padding-left: 20px;
+}
+footer h1 {
+  text-align: center;
+  font-family: 'tradebold';
+  font-size: 1.6rem;
+  color: #ffffff;
+  height: 60px;
+  line-height: 60px;
+  border-top: 1px solid #232323;
+  border-bottom: 1px solid grey;
+}
+footer h1 .em {
+  color: #cfba6b;
+}
+footer .rights {
+  width: 50%;
+  float: right;
+  margin-top: 30px;
+  color: #fcfcfc;
+  text-align: center;
+  font-size: 1rem;
+}
+footer .rights .em {
+  color: #cfba6b;
 }
